@@ -1,18 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sign_up_login_form/screen/home/components/searchField.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sign_up_login_form/screen/home/components/section_title.dart';
 import 'package:sign_up_login_form/size_mediaquery.dart';
 import 'package:sign_up_login_form/style.dart';
 
+import '../../../modal/categories.dart';
+import '../../../modal/special_Product.dart';
+import 'catagories_item.dart';
+import 'catagories_list.dart';
 import 'discount_banner.dart';
 import 'home_header.dart';
-import 'icon_btn_with_counter.dart';
 
 class HomeBodyScreen extends StatelessWidget {
   const HomeBodyScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -20,8 +25,13 @@ class HomeBodyScreen extends StatelessWidget {
             children: [
               SizedBox(height: getProportionateScreenHeight(20),),
               HomeHeader(),
-              SizedBox(height: getProportionateScreenHeight(20),),
               DiscountBanner(),
+              CatagoriesPage(),
+              SizedBox(height: getProportionateScreenHeight(20),),
+              SectionTitle(title: "Special for you",subTitle: "SeeMore",onTab: (){},),
+              SizedBox(height: getProportionateScreenHeight(20),),
+              CategoriesList(),
+              // SpecialOffer
             ],
           ),
         )

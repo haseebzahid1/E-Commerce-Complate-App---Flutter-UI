@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up_login_form/screen/home/components/searchField.dart';
-
 import '../../../size_mediaquery.dart';
 import 'icon_btn_with_counter.dart';
+
+
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -13,9 +14,10 @@ class HomeHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          // SearchField(),
           SearchField(),
-          IconBtnWithCounter(icon:Icons.notifications_none,onTap: (){},),
-          IconBtnWithCounter(icon:Icons.shopping_cart,onTap: (){},numOfItems: 3,),
+          IconBtnWithCounter(icon: Icons.shopping_cart,),
+          IconBtnWithCounter(icon: Icons.notifications_none,numOfItems: 3,),
         ],
       ),
     );

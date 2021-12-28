@@ -21,7 +21,7 @@ List<Catagories> catagories = [
     iamge: "assets/icons/Bill Icon.svg",
   ),Catagories(
     title: "Game",
-    iamge: "assets/images/splash_3.png",
+    iamge: "assets/icons/Game Icon.svg",
   ),Catagories(
     title: "Daily Gift",
     iamge: "assets/icons/Gift Icon.svg",

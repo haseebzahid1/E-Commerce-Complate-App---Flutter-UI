@@ -6,6 +6,7 @@ import '../../../modal/splash_model.dart';
 import '../../../size_mediaquery.dart';
 import '../../../style.dart';
 import '../../Welcome-back/SignInScreen.dart';
+import '../../home/home_screen.dart';
 
 
 class Body extends StatefulWidget {
@@ -59,7 +60,8 @@ class _BodyState extends State<Body> {
                     Spacer(flex: 1,),
                     DefaultButton(text: 'Continue',
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignInScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                        // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignInScreen()));
                       },),
                     Spacer(),
                   ],
