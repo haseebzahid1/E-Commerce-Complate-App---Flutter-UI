@@ -17,8 +17,9 @@ class SectionTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: getProportionateScreenWidth(13),
+            fontSize: getProportionateScreenWidth(11),
             color: Colors.black,
+            fontWeight: FontWeight.bold
           ),),
           InkWell(
             onTap: onTab,

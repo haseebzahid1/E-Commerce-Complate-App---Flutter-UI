@@ -9,7 +9,7 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getProportionateScreenWidth(80),
+      height: getProportionateScreenWidth(60),
       padding: EdgeInsets.symmetric(
           horizontal: getProportionateScreenWidth(10)
       ),
@@ -34,7 +34,8 @@ class CategoriesList extends StatelessWidget {
                     ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(specialProduct.image,
-                          height: getProportionateScreenWidth(80),
+                          height: getProportionateScreenWidth(60),
+                          width: double.infinity,
                           fit: BoxFit.cover,
                         )
                     ),

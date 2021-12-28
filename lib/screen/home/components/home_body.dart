@@ -6,7 +6,9 @@ import 'package:sign_up_login_form/size_mediaquery.dart';
 import 'package:sign_up_login_form/style.dart';
 
 import '../../../modal/categories.dart';
+import '../../../modal/product.dart';
 import '../../../modal/special_Product.dart';
+import '../product_card.dart';
 import 'catagories_item.dart';
 import 'catagories_list.dart';
 import 'discount_banner.dart';
@@ -23,15 +25,18 @@ class HomeBodyScreen extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
-              SizedBox(height: getProportionateScreenHeight(20),),
+              SizedBox(height: getProportionateScreenHeight(10),),
               HomeHeader(),
               DiscountBanner(),
               CatagoriesPage(),
-              SizedBox(height: getProportionateScreenHeight(20),),
+              // SizedBox(height: getProportionateScreenHeight(5),),
               SectionTitle(title: "Special for you",subTitle: "SeeMore",onTab: (){},),
               SizedBox(height: getProportionateScreenHeight(20),),
               CategoriesList(),
-              // SpecialOffer
+              SizedBox(height: getProportionateScreenHeight(10),),
+              SectionTitle(title: "Popular Product",subTitle: "SeeMore",onTab: (){},),
+              SizedBox(height: getProportionateScreenHeight(10),),
+              ProductCard(),
             ],
           ),
         )

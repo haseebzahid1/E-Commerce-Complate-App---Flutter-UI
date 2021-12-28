@@ -13,7 +13,7 @@ class DiscountBanner extends StatelessWidget {
       margin: EdgeInsets.all(getProportionateScreenWidth(10)),
       padding: EdgeInsets.symmetric(
         horizontal: getProportionateScreenWidth(15),
-        vertical: getProportionateScreenWidth(12),
+        vertical: getProportionateScreenWidth(8),
       ),
       decoration: BoxDecoration(
         color: Color(0xFF4A3298),
@@ -27,7 +27,7 @@ class DiscountBanner extends StatelessWidget {
             TextSpan(
               text: "Cashback 20%",
               style: TextStyle(
-                fontSize: getProportionateScreenWidth(14),
+                fontSize: getProportionateScreenWidth(12),
                 fontWeight: FontWeight.bold,
               ),
             ),
