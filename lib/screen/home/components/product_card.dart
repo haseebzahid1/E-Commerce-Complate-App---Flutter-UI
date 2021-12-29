@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../modal/product.dart';
-import '../../size_mediaquery.dart';
-import '../../style.dart';
+import '../../../modal/product.dart';
+import '../../../size_mediaquery.dart';
+import '../../../style.dart';
+import '../../details/detail_screen.dart';
 
 class ProductCard extends StatefulWidget {
   const ProductCard({Key? key}) : super(key: key);
@@ -27,7 +28,11 @@ class _ProductCardState extends State<ProductCard> {
         itemBuilder: (context, index){
           Product productItem = demoProducts[index];
           return GestureDetector(
-            onTap: (){},
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailsScreen(
+                  demoProduct:productItem
+              )));
+            },
             child: Container(
               margin: EdgeInsets.only(right: 20),
               width: getProportionateScreenWidth(64),

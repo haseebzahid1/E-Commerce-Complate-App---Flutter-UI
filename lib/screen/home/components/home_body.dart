@@ -8,7 +8,7 @@ import 'package:sign_up_login_form/style.dart';
 import '../../../modal/categories.dart';
 import '../../../modal/product.dart';
 import '../../../modal/special_Product.dart';
-import '../product_card.dart';
+import 'product_card.dart';
 import 'catagories_item.dart';
 import 'catagories_list.dart';
 import 'discount_banner.dart';
