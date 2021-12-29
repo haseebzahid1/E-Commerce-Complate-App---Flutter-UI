@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sign_up_login_form/screen/splash/components/splash_content.dart';
 
 import '../../../component/default_button.dart';
+import '../../main_page.dart';
 import '../../../modal/splash_model.dart';
 import '../../../size_mediaquery.dart';
 import '../../../style.dart';
 import '../../Welcome-back/SignInScreen.dart';
+import '../../complete_profile/profile_screen.dart';
 import '../../home/home_screen.dart';
+import '../../profile/profile_screen.dart';
 
 
 class Body extends StatefulWidget {
@@ -54,14 +57,23 @@ class _BodyState extends State<Body> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(splashData.length, (index){
-                          return buildDot( index: index);
+                          return AnimatedContainer(
+                            duration: kAnimationDuration,
+                            margin: EdgeInsets.only(right: 5),
+                            width: currentPage==index?20:6,
+                            height: 6,
+                            decoration: BoxDecoration(
+                                color:currentPage==index?kPrimaryColor:Color(0xffd8d8d8),
+                                borderRadius: BorderRadius.circular(8)
+                            ),
+                          );
+                          // return buildDot( index: index);
                         })
                     ),
                     Spacer(flex: 1,),
                     DefaultButton(text: 'Continue',
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
-                        // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignInScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignInScreen()));
                       },),
                     Spacer(),
                   ],
@@ -73,17 +85,3 @@ class _BodyState extends State<Body> {
       ),
     );
   }
-AnimatedContainer buildDot({required int index}){
-    return AnimatedContainer(
-      duration: kAnimationDuration,
-      margin: EdgeInsets.only(right: 5),
-      width: currentPage==index?20:6,
-      height: 6,
-      decoration: BoxDecoration(
-          color:currentPage==index?kPrimaryColor:Color(0xffd8d8d8),
-          borderRadius: BorderRadius.circular(8)
-      ),
-    );
-}
-}
-

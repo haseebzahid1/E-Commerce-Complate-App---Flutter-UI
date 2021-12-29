@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../component/default_button.dart';
 import '../../../size_mediaquery.dart';
 import '../../home/home_screen.dart';
+import '../../main_page.dart';
 import '../../register_account/register_screen.dart';
 
 class BodyPage extends StatelessWidget {
@@ -27,7 +28,8 @@ class BodyPage extends StatelessWidget {
             size: getProportionateScreenWidth(11),
             text: 'Back to Home',
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MainPage()));
+              // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
             },),
         ),
         Spacer(),
