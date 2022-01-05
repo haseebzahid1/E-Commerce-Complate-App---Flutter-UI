@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sign_up_login_form/size_mediaquery.dart';
+import 'package:sign_up_login_form/style.dart';
 
-import '../../../size_mediaquery.dart';
-import '../../../style.dart';
+
 
 class SearchField extends StatelessWidget {
   const SearchField({Key? key}) : super(key: key);

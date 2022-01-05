@@ -16,8 +16,10 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
+    final Size size  = MediaQuery.of(context).size;
     return Container(
-      height: 220,
+      // color: Colors.red,
+      height: size.height * 0.29,
       // color: Colors.red,
       padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10)),
       // color: Colors.red,

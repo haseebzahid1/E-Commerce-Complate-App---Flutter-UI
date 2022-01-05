@@ -3,6 +3,8 @@ import 'package:sign_up_login_form/modal/product.dart';
 import 'package:sign_up_login_form/screen/details/components/product_images.dart';
 import 'package:sign_up_login_form/screen/details/components/product_description.dart';
 
+import '../../../modal/product.dart';
+
 
 
 class DetailBody extends StatefulWidget {
@@ -18,7 +20,7 @@ class _DetailBodyState extends State<DetailBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ProductImages(detailProduct:widget.detailProduct,),
+        ProductImages(demoProducts:widget.detailProduct,),
         ProductDescription(detailProduct:widget.detailProduct,onTap: (){},),
 
       ],

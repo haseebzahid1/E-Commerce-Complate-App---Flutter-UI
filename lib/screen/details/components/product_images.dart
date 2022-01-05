@@ -5,8 +5,8 @@ import '../../../size_mediaquery.dart';
 import '../../../style.dart';
 
 class ProductImages extends StatefulWidget {
-  final Product detailProduct;
-  const ProductImages({Key? key, required this.detailProduct, }) : super(key: key);
+  final Product demoProducts;
+  const ProductImages({Key? key, required this.demoProducts, }) : super(key: key);
 
 
   @override
@@ -23,14 +23,14 @@ class _ProductImagesState extends State<ProductImages> {
           width: getProportionateScreenWidth(90),
           child: AspectRatio(
             aspectRatio: 1,
-            child: Image.asset(widget.detailProduct.images[selectedImage]),
+            child: Image.asset(widget.demoProducts.images[selectedImage]),
           ),
         ),
         Container(
           margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10)),
           height: getProportionateScreenWidth(38),
           child: ListView.builder(
-            itemCount:widget.detailProduct.images.length,
+            itemCount:widget.demoProducts.images.length,
             scrollDirection: Axis.horizontal,
             physics: BouncingScrollPhysics(),
             itemBuilder: (context, index){
@@ -53,7 +53,7 @@ class _ProductImagesState extends State<ProductImages> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Image.asset(
-                    widget.detailProduct.images[index],
+                    widget.demoProducts.images[index],
                     width: 40,),
                 ),
               );

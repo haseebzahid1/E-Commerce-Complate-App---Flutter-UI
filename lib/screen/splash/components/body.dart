@@ -20,10 +20,13 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-   int currentPage = 0;
+  int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery
+        .of(context)
+        .size;
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -31,14 +34,14 @@ class _BodyState extends State<Body> {
             Container(
               height: size.height * 0.58,
               child: PageView.builder(
-                onPageChanged: (int value){
+                onPageChanged: (int value) {
                   setState(() {
-                    currentPage=value;
+                    currentPage = value;
                   });
                 },
                 itemCount: splashData.length,
                 physics: BouncingScrollPhysics(),
-                itemBuilder: (context, index){
+                itemBuilder: (context, index) {
                   SplashData splashItem = splashData[index];
                   return SplashContent(
                     image: splashItem.iamge,
@@ -48,22 +51,25 @@ class _BodyState extends State<Body> {
               ),
             ),
             Container(
-              height: size.height*0.38,
+              height: size.height * 0.38,
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+                padding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(20)),
                 child: Column(
                   children: [
                     Spacer(),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(splashData.length, (index){
+                        children: List.generate(splashData.length, (index) {
                           return AnimatedContainer(
                             duration: kAnimationDuration,
                             margin: EdgeInsets.only(right: 5),
-                            width: currentPage==index?20:6,
+                            width: currentPage == index ? 20 : 6,
                             height: 6,
                             decoration: BoxDecoration(
-                                color:currentPage==index?kPrimaryColor:Color(0xffd8d8d8),
+                                color: currentPage == index
+                                    ? kPrimaryColor
+                                    : Color(0xffd8d8d8),
                                 borderRadius: BorderRadius.circular(8)
                             ),
                           );
@@ -73,7 +79,8 @@ class _BodyState extends State<Body> {
                     Spacer(flex: 1,),
                     DefaultButton(text: 'Continue',
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignInScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (
+                            context) => SignInScreen()));
                       },),
                     Spacer(),
                   ],
@@ -85,3 +92,4 @@ class _BodyState extends State<Body> {
       ),
     );
   }
+}
